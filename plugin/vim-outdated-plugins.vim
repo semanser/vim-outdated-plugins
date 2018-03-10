@@ -1,7 +1,11 @@
 function! CheckForUpdates()
   let g:needToUpDate = 0
   " TODO check only activated plugins and not all downloaded
-  let job2 = jobstart([ 'bash', '-c', 'find ' . g:plug_home . ' -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd ' . '{}' . ' && git status -uno" \;' ], s:callbacks)
+
+  for key in keys(g:plugs)
+    let job2 = jobstart([ 'bash', '-c', "cd " . g:plugs[key].dir ." && git remote update && git status -uno"], s:callbacks)
+  endfor
+
 endfunction
 
 function! s:JobHandler(job_id, data, event) dict
@@ -13,11 +17,9 @@ function! s:JobHandler(job_id, data, event) dict
     echom 'stderr: '.join(a:data)
   else
     if g:needToUpDate > 0
-      let g:airline_section_warning = 'Updates: ' . g:needToUpDate
+      echom 'Plugins to update: ' . g:needToUpDate
     endif
-    execute ":AirlineRefresh"
   endif
-
 endfunction
 
 let s:callbacks = {
