@@ -18,6 +18,8 @@ function! s:JobHandler(job_id, data, event) dict
   else
     if g:needToUpDate > 0
       echom 'Plugins to update: ' . g:needToUpDate
+    elseif
+      echom 'All plugins up-to-date'
     endif
   endif
 endfunction
