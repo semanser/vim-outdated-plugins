@@ -4,7 +4,12 @@
 
 
 ## TODO:
-### Support
+### OS
+- [x] macOS
+- [x] Linux
+- [ ] Windows
+
+### Editors
 - [x] Neovim
 - [ ] Vim
 
