@@ -1,9 +1,11 @@
 # vim-outdated-plugins
-🔄 Async Vim plugin for showing your outdated Vim plugins [UNDER DEVELOPMENT]
+🔄 Async Vim plugin for showing your outdated Vim plugins.
 
+## What it does?
+This plugin automatically checks if any of your plugins are outdated and show information about that.
 
+To use this plugin make sure you have **git** installed.
 
-## TODO:
 ### OS
 - [x] macOS
 - [x] Linux
