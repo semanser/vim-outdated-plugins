@@ -30,5 +30,7 @@ let s:callbacks = {
       \ 'on_exit': function('s:JobHandler')
       \ }
 
-au VimEnter * call CheckForUpdates()
+if has('nvim')
+  au VimEnter * call CheckForUpdates()
+endif
 
