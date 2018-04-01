@@ -1,5 +1,5 @@
 # vim-outdated-plugins
-Async plugin for showing your outdated plugins.
+Async plugin for showing number of your outdated plugins.
 
 ## What it does?
 This plugin automatically checks if any of your plugins are outdated and echo message about that.
