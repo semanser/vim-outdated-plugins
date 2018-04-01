@@ -6,6 +6,17 @@ This plugin automatically checks if any of your plugins are outdated and echo me
 
 To use this plugin make sure you have **git** installed.
 
+## Screenshots
+Just message under the status bar :)
+
+![alt text](https://raw.githubusercontent.com/semanser/vim-outdated-plugins/master/images/outdated.png)
+
+or 
+
+![alt text](https://raw.githubusercontent.com/semanser/vim-outdated-plugins/master/images/updated.png)
+
+
+
 ### OS
 - [x] macOS
 - [x] Linux
