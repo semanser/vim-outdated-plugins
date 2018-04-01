@@ -2,7 +2,7 @@
 Async plugin for showing your outdated plugins.
 
 ## What it does?
-This plugin automatically checks if any of your plugins are outdated and show information about that.
+This plugin automatically checks if any of your plugins are outdated and echo message about that.
 
 To use this plugin make sure you have **git** installed.
 
