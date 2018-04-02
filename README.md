@@ -24,7 +24,7 @@ or
 
 ### Editors
 - [x] Neovim
-- [ ] Vim
+- [x] Vim
 
 ### Plugin Managers:
  - [x] vim-plug
