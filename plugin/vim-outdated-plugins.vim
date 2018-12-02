@@ -1,3 +1,7 @@
+if !exists('g:outdated_plugins_silent_mode')
+  let g:outdated_plugins_silent_mode = 0
+endif
+
 function! s:JobHandler(job_id, data, event) dict
   if (str2nr(join(a:data)) != 0)
     let g:pluginsToUpdate += 1
@@ -11,7 +15,9 @@ function! s:CalculateUpdates(job_id, data, event) dict
     if g:pluginsToUpdate > 0
       echom 'Plugins to update: ' . g:pluginsToUpdate
     else
-      echom 'All plugins up-to-date'
+      if !g:outdated_plugins_silent_mode
+        echom 'All plugins up-to-date'
+      endif
     endif
   endif
 endfunction

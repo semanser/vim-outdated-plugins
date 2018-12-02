@@ -6,8 +6,19 @@ This plugin automatically checks if any of your plugins are outdated and display
 
 To use this plugin make sure you have **git** installed.
 
+## Installation
+```vim
+Plug 'semanser/vim-outdated-plugins'
+```
+
+## Configuration
+```vim
+" Do not show any message if all plugins are up to date. 0 by default
+let g:outdated_plugins_silent_mode = 1
+```
+
 ## Screenshots
-Just a message under the status bar.
+Simple message text message under the status bar.
 
 ![alt text](https://raw.githubusercontent.com/semanser/vim-outdated-plugins/master/images/outdated.png)
 ![alt text](https://raw.githubusercontent.com/semanser/vim-outdated-plugins/master/images/updated.png)
