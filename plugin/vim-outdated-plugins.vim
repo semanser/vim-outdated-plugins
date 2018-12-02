@@ -1,5 +1,5 @@
 function! s:JobHandler(job_id, data, event) dict
-  if (join(a:data) =~ "is behind")
+  if (str2nr(join(a:data)) != 0)
     let g:pluginsToUpdate += 1
   endif
 endfunction
@@ -22,7 +22,7 @@ function! CheckForUpdates()
 
   " TODO check only activated plugins and not all downloaded
   for key in keys(g:plugs)
-    let job = async#job#start([ 'bash', '-c', "cd " . g:plugs[key].dir ." && git remote update && git status -uno"], s:callbacks)
+    let job = async#job#start([ 'bash', '-c', "cd " . g:plugs[key].dir ." && git remote update > /dev/null && git rev-list HEAD..origin --count"], s:callbacks)
   endfor
 endfunction
 
