@@ -1,3 +1,7 @@
+![Vim support](https://img.shields.io/badge/vim-support-brightgreen.svg?style=flat-square)
+![Vim support](https://img.shields.io/badge/neovim-support-brightgreen.svg?style=flat-square)
+![GitHub release](https://img.shields.io/github/release/semanser/vim-outdated-plugins.svg?style=flat-square)
+
 # vim-outdated-plugins
 Async plugin for showing number of your outdated plugins.
 
@@ -27,10 +31,6 @@ Simple message text message under the status bar.
 - [x] macOS
 - [x] Linux
 - [ ] Windows
-
-### Editors
-- [x] Neovim
-- [x] Vim
 
 ### Plugin Managers:
  - [x] vim-plug
