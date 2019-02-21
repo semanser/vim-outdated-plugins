@@ -3,7 +3,7 @@ if !exists('g:outdated_plugins_silent_mode')
 endif
 
 function! s:JobHandler(job_id, data, event) dict
-  if (str2nr(join(a:data)) == 0)
+  if (str2nr(join(a:data)) != 0)
     let g:pluginsToUpdate += 1
   endif
 endfunction
