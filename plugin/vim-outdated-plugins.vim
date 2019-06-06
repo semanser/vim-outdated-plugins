@@ -9,19 +9,19 @@ function! s:JobHandler(job_id, data, event) dict
 endfunction
 
 function! s:CalculateUpdates(job_id, data, event) dict
-  let g:test2 = 0
-  let g:command2 = ""
+  let l:numberOfcheckedPlugins = 0
+  let l:command = ""
 
   for key in keys(g:plugs)
-    let g:command2 .= '(git -C ' . g:plugs[key].dir . ' rev-list HEAD..origin --count)'
-    let g:test2 += 1
+    let l:command .= '(git -C ' . g:plugs[key].dir . ' rev-list HEAD..origin --count)'
+    let l:numberOfcheckedPlugins += 1
 
-    if g:test2 != len(keys(g:plugs))
-      let g:command2 .= ' &&'
+    if l:numberOfcheckedPlugins != len(keys(g:plugs))
+      let l:command .= ' &&'
     endif
   endfor
 
-  call async#job#start([ 'bash', '-c', g:command2], s:calculateCallbacks)
+  call async#job#start([ 'bash', '-c', l:command], s:calculateCallbacks)
 endfunction
 
 function! s:DisplayResults(job_id, data, event) dict
@@ -46,20 +46,20 @@ let s:calculateCallbacks = {
 
 function! CheckForUpdates()
   let g:pluginsToUpdate = 0
-	let g:command = ""
+	let l:command = ""
 
   " TODO check only activated plugins and not all downloaded
-  let g:test = 0
+  let l:numberOfcheckedPlugins = 0
   for key in keys(g:plugs)
-    let g:command .= 'git -C ' . g:plugs[key].dir . ' remote update > /dev/null'
-    let g:test += 1
+    let l:command .= 'git -C ' . g:plugs[key].dir . ' remote update > /dev/null'
+    let l:numberOfcheckedPlugins += 1
 
-    if g:test != len(keys(g:plugs))
-      let g:command .= ' &'
+    if l:numberOfcheckedPlugins != len(keys(g:plugs))
+      let l:command .= ' &'
     endif
   endfor
 
-  call async#job#start([ 'bash', '-c', g:command], s:remoteUpdateCallbacks)
+  call async#job#start([ 'bash', '-c', l:command], s:remoteUpdateCallbacks)
 endfunction
 
 au VimEnter * call CheckForUpdates()
