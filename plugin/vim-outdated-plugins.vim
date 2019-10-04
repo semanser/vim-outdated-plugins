@@ -13,7 +13,8 @@ function! s:CalculateUpdates(job_id, data, event) dict
   let l:command = ""
 
   for key in keys(g:plugs)
-    let l:command .= '(git -C ' . g:plugs[key].dir . ' rev-list HEAD..origin --count)'
+    let l:command .= '(git -C ' . g:plugs[key].dir . ' rev-list HEAD..' .
+          \ g:plugs[key].branch . ' --count)'
     let l:numberOfcheckedPlugins += 1
 
     if l:numberOfcheckedPlugins != len(keys(g:plugs))
