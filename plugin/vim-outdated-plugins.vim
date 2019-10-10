@@ -13,7 +13,7 @@ function! s:CalculateUpdates(job_id, data, event) dict
   let l:command = ""
 
   for key in keys(g:plugs)
-    let l:command .= '(git -C ' . g:plugs[key].dir . ' rev-list HEAD..' .
+    let l:command .= '(git -C ' . g:plugs[key].dir . ' rev-list HEAD..origin/' .
           \ g:plugs[key].branch . ' --count)'
     let l:numberOfcheckedPlugins += 1
 
@@ -47,7 +47,7 @@ let s:calculateCallbacks = {
 
 function! CheckForUpdates()
   let g:pluginsToUpdate = 0
-	let l:command = ""
+  let l:command = ""
 
   " TODO check only activated plugins and not all downloaded
   let l:numberOfcheckedPlugins = 0
@@ -63,5 +63,9 @@ function! CheckForUpdates()
   call async#job#start([ 'bash', '-c', l:command], s:remoteUpdateCallbacks)
 endfunction
 
-au VimEnter * call CheckForUpdates()
+if v:vim_did_enter
+  call CheckForUpdates()
+else
+  au VimEnter * call CheckForUpdates()
+endif
 
