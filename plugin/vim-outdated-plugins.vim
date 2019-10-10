@@ -55,7 +55,7 @@ function! CheckForUpdates()
     let l:command .= 'git -C ' . g:plugs[key].dir . ' remote update > /dev/null & '
     let l:numberOfcheckedPlugins += 1
 
-    if l:numberOfcheckedPlugins == len(keys(g:plugs))
+    if l:numberOfcheckedPlugins == len(g:plugs)
       let l:command .= 'wait'
     endif
   endfor
