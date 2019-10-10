@@ -52,11 +52,11 @@ function! CheckForUpdates()
   " TODO check only activated plugins and not all downloaded
   let l:numberOfcheckedPlugins = 0
   for key in keys(g:plugs)
-    let l:command .= 'git -C ' . g:plugs[key].dir . ' remote update > /dev/null'
+    let l:command .= 'git -C ' . g:plugs[key].dir . ' remote update > /dev/null & '
     let l:numberOfcheckedPlugins += 1
 
-    if l:numberOfcheckedPlugins != len(keys(g:plugs))
-      let l:command .= ' &'
+    if l:numberOfcheckedPlugins == len(keys(g:plugs))
+      let l:command .= 'wait'
     endif
   endfor
 
