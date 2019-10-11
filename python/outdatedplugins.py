@@ -30,8 +30,12 @@ def check_for_updates():
     plugs_to_update = sum(1 for i in stdout.split() if int(i) > 0)
     g_outdated_plugins_silent_mode = int(
         vim.eval("g:outdated_plugins_silent_mode"))
+    g_outdated_plugins_trigger_mode = int(vim.eval(
+        "g:outdated_plugins_trigger_mode"))
     if plugs_to_update > 0:
         print("Plugins to update: %d" % plugs_to_update)
+        if g_outdated_plugins_trigger_mode:
+            vim.command("PlugUpdate")
     elif not g_outdated_plugins_silent_mode:
         print("All plugins up-to-date")
 

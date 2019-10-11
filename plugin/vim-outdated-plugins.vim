@@ -2,6 +2,10 @@ if !exists('g:outdated_plugins_silent_mode')
   let g:outdated_plugins_silent_mode = 0
 endif
 
+if !exists('g:outdated_plugins_trigger_mode')
+  let g:outdated_plugins_trigger_mode = 0
+endif
+
 let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 python3 << EOF
