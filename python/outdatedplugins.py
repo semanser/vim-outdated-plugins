@@ -23,9 +23,8 @@ def check_for_updates():
 
     calculate_updates_process = subprocess.Popen(
         ["bash", "-c", calculate_updates_command],
-        stdout=subprocess.PIPE,
-        text=True)
-    stdout, stderr = calculate_updates_process.communicate()
+        stdout=subprocess.PIPE)
+    stdout = calculate_updates_process.communicate()[0]
 
     plugs_to_update = sum(1 for i in stdout.split() if int(i) > 0)
     g_outdated_plugins_silent_mode = int(
