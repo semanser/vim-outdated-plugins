@@ -18,15 +18,12 @@ def check_for_updates():
     update_command = " & ".join(update_commands)
     calculate_updates_command = " && ".join(calculate_updates_commands)
 
-    updates_process = subprocess.Popen(["bash", "-c", update_command])
-    updates_process.communicate()
+    subprocess.run(["bash", "-c", update_command])
 
-    calculate_updates_process = subprocess.Popen(
-        ["bash", "-c", calculate_updates_command],
-        stdout=subprocess.PIPE)
-    stdout = calculate_updates_process.communicate()[0]
+    out = subprocess.run(
+        ["bash", "-c", calculate_updates_command], stdout=subprocess.PIPE)
 
-    plugs_to_update = sum(1 for i in stdout.split() if int(i) > 0)
+    plugs_to_update = sum(1 for i in out.stdout.decode().split() if int(i) > 0)
     g_outdated_plugins_silent_mode = int(
         vim.eval("g:outdated_plugins_silent_mode"))
     g_outdated_plugins_trigger_mode = int(vim.eval(
