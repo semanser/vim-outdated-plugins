@@ -1,8 +1,27 @@
 import vim
 import subprocess
+import os
+
+
+def plug_can_proceed():
+    # plug.vim has these two guards in place. occassionally, if trigger mode is
+    # enabled, we can get in a situation where we're calling PlugUpdate when it
+    # will throw, causing a nasty error message. instead, we can just duplicate
+    # the guards here
+    if not os.getcwd():
+        return False
+
+    for evar in ["GIT_DIR", "GIT_WORK_TREE"]:
+        if os.environ.get(evar) != None:
+            return False
+
+    return True
 
 
 def check_for_updates():
+    if not plug_can_proceed():
+        return
+
     g_plugs = vim.eval("g:plugs")
 
     update_commands = []
