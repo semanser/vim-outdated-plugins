@@ -33,6 +33,8 @@ let s:job_type_nvimjob = 'nvimjob'
 let s:job_type_vimjob = 'vimjob'
 let s:job_error_unsupported_job_type = -2 " unsupported job type
 
+let &cpo = s:save_cpo
+
 function! s:job_supported_types() abort
     let l:supported_types = []
     if has('nvim')
