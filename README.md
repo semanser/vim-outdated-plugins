@@ -15,7 +15,7 @@ To use this plugin make sure you have **git** installed.
 ## Installation
 
 ```vim
-Plug 'semanser/vim-outdated-plugins'
+Plug 'thisisrandy/vim-outdated-plugins'
 ```
 
 ## Configuration
