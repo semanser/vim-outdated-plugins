@@ -30,7 +30,8 @@ def check_for_updates():
     for plug in g_plugs.values():
         update_commands.append("git -C %s remote update > /dev/null" % plug["dir"])
         calculate_updates_commands.append(
-            "git -C %s rev-list HEAD..origin/%s --count" % (plug["dir"], plug["branch"])
+            "git -C %s rev-list HEAD..origin/%s --count"
+            % (plug["dir"], plug["branch"] if plug["branch"] else "master")
         )
 
     update_commands.append("wait")
