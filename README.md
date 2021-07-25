@@ -12,7 +12,9 @@ outdated plugins managed via [vim-plug](https://github.com/junegunn/vim-plug)
 
 This plugin provides a mechanism for displaying a message indicating whether any
 of your plugins are outdated. It can also optionally trigger an update if
-needed.
+needed. It fills a gap in [vim-plug](https://github.com/junegunn/vim-plug),
+which has no mechanism for fetching updates without also installing them and
+cannot function non-disruptively in the background
 
 To use this plugin, make sure you are using [neovim](https://neovim.io/), have
 [git](https://git-scm.com) installed, and are using
