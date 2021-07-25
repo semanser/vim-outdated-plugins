@@ -29,6 +29,13 @@ Add the following line inside of the `call plug#begin()` section of your
 Plug 'thisisrandy/vim-outdated-plugins'
 ```
 
+and anywhere after `call plug#end()`, add
+
+```vim
+" This line is required to check for outdated plugins on startup
+autocmd VimEnter * call CheckOutdatedPlugins()
+```
+
 ## Configuration
 
 ```vim
@@ -39,9 +46,6 @@ let g:outdated_plugins_silent_mode = 1
 " will open and focus a vertical split and do blocking work, which some users may
 " find disruptive on startup
 let g:outdated_plugins_trigger_mode = 1
-
-" This line is required to check for outdated plugins on startup
-autocmd VimEnter * call CheckOutdatedPlugins()
 ```
 
 ## Screenshots
