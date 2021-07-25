@@ -26,6 +26,8 @@ let g:outdated_plugins_silent_mode = 1
 
 " Trigger :PlugUpdate as needed
 let g:outdated_plugins_trigger_mode = 1
+
+autocmd VimEnter * call CheckOutdatedPlugins()
 ```
 
 ## Screenshots
