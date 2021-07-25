@@ -1,6 +1,7 @@
 ![Vim support](https://img.shields.io/badge/vim-unsupported-red.svg?style=flat-square)
-![Vim support](https://img.shields.io/badge/neovim-supported-green.svg?style=flat-square)
-![GitHub release](https://img.shields.io/github/release/semanser/vim-outdated-plugins.svg?style=flat-square)
+![Neovim support](https://img.shields.io/badge/neovim-supported-green.svg?style=flat-square)
+![Python version](https://img.shields.io/badge/python-%5E3.5-yellow?style=flat-square)
+![GitHub release](https://img.shields.io/github/v/release/thisisrandy/vim-outdated-plugins?style=flat-square)
 
 # vim-outdated-plugins
 
