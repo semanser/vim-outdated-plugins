@@ -35,7 +35,9 @@ Plug 'thisisrandy/vim-outdated-plugins'
 " Do not show any message if all plugins are up to date. 0 by default
 let g:outdated_plugins_silent_mode = 1
 
-" Trigger :PlugUpdate as needed. 0 by default
+" Trigger :PlugUpdate as needed. 0 by default. Note that, when triggered, this
+" will open and focus a vertical split and do blocking work, which some users may
+" find disruptive on startup
 let g:outdated_plugins_trigger_mode = 1
 
 " This line is required to check for outdated plugins on startup
