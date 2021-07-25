@@ -16,10 +16,6 @@ needed. It fills a gap in [vim-plug](https://github.com/junegunn/vim-plug),
 which has no mechanism for fetching updates without also installing them and
 cannot function non-disruptively in the background
 
-To use this plugin, make sure you are using [neovim](https://neovim.io/), have
-[git](https://git-scm.com) installed, and are using
-[vim-plug](https://github.com/junegunn/vim-plug) as your plugin manager
-
 ## Installation
 
 Add the following line inside of the `call plug#begin()` section of your
@@ -47,6 +43,13 @@ let g:outdated_plugins_silent_mode = 1
 " find disruptive on startup
 let g:outdated_plugins_trigger_mode = 1
 ```
+
+## Requirements
+
+- [neovim](https://neovim.io/)
+- [git](https://git-scm.com)
+- [vim-plug](https://github.com/junegunn/vim-plug)
+- [python](https://www.python.org/) >= 3.5
 
 ## Screenshots
 
