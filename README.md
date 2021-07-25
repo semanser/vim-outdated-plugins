@@ -52,6 +52,15 @@ let g:outdated_plugins_trigger_mode = 1
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [python](https://www.python.org/) >= 3.5
 
+## Development
+
+Fork this repository and point the `vim-plug` section of your `init.vim` to it.
+After running `:PlugInstall`, you can edit the code directly in the `vim-plug`
+directory, which is `~/.config/nvim/plugged` by default. Note that nvim must be
+restarted for changes to be reflected. For details and a more general new
+development-oriented method, see
+[nvim-example-python-plugin](https://github.com/jacobsimpson/nvim-example-python-plugin)
+
 ## Screenshots
 
 Simple message text message under the status bar.
