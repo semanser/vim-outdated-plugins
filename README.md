@@ -4,8 +4,9 @@
 
 # vim-outdated-plugins
 
-A remote plugin for showing the number of and automatically updating outdated
-plugins managed via [vim-plug](https://github.com/junegunn/vim-plug)
+A [remote](https://pynvim.readthedocs.io/en/latest/usage/remote-plugins.html)
+(non-blocking) plugin for showing the number of and automatically updating
+outdated plugins managed via [vim-plug](https://github.com/junegunn/vim-plug)
 
 ## What does it do?
 
