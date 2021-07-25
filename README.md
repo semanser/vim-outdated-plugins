@@ -8,7 +8,7 @@ Async plugin for showing number of your outdated plugins.
 
 ## What it does?
 
-This plugin automatically checks if any of your plugins are outdated and display a message about that.
+This plugin automatically checks if any of your plugins are outdated and displays a message about that.
 
 To use this plugin make sure you have **git** installed.
 
