@@ -38,8 +38,8 @@ class OutdatedPlugins:
         for plug in g_plugs.values():
             update_commands.append("git -C %s remote update > /dev/null" % plug["dir"])
             calculate_updates_commands.append(
-                "git -C %s rev-list HEAD..origin/%s --count"
-                % (plug["dir"], plug["branch"] if plug["branch"] else "master")
+                "git -C %s rev-list HEAD..origin%s%s --count"
+                % (plug["dir"], "/" if plug["branch"] else "", plug["branch"])
             )
 
         update_commands.append("wait")
