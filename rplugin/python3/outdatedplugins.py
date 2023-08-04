@@ -61,11 +61,11 @@ class OutdatedPlugins:
         )
 
         if plugs_to_update > 0:
-            self.vim.command(f"echo 'Plugins to update: {plugs_to_update}'")
+            self.vim.command(f"echom 'Plugins to update: {plugs_to_update}'")
             if g_outdated_plugins_trigger_mode:
                 self.vim.command("PlugUpdate")
         elif not g_outdated_plugins_silent_mode:
-            self.vim.command("echo 'All plugins up-to-date'")
+            self.vim.command("echom 'All plugins up-to-date'")
 
     def get_default(self, var: str, default: Any) -> Any:
         """
